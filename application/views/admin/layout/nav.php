@@ -88,6 +88,37 @@
           </ul>
         </li>
 
+         <!-- Menu Konfigurasi -->
+         <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-wrench"></i>
+            <p>
+              Konfigurasi
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('admin/konfigurasi') ?>" class="nav-link">
+                <i class="fas fa-home nav-icon"></i>
+                <p>Konfigurasi Umum</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('admin/konfigurasi/logo') ?>" class="nav-link">
+                <i class="fas fa-image nav-icon"></i>
+                <p>Konfigurasi Logo</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('admin/konfigurasi/icon') ?>" class="nav-link">
+                <i class="fas fa-home nav-icon"></i>
+                <p>Konfigurasi Icon</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
         <li class="nav-item">
           <a href="<?= base_url('login/logout') ?>" class="nav-link">
             <i class="nav-icon far fa-circle text-danger"></i>
@@ -113,8 +144,8 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">DataTables</li>
+            <li class="breadcrumb-item">Home</a></li>
+            <li class="breadcrumb-item active"><a href="<?php echo base_url('admin/produk')?>"><?= $title; ?></a></li>
           </ol>
         </div>
       </div>

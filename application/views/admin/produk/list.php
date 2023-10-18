@@ -38,7 +38,7 @@ if ($this->session->flashdata('sukses')) {
                 <td><?= number_format($produk->harga, '0', ',', '.') ?></td>
                 <td><?= $produk->status_produk ?></td>
                 <td>
-                    <a href="<?= base_url('admin/produk/gambar/' . $produk->id_produk) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i> Gambar </a>
+                    <a href="<?= base_url('admin/produk/gambar/' . $produk->id_produk) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i> Gambar (<?php echo $produk->total_gambar?>)</a>
 
                     <a href="<?= base_url('admin/produk/edit/' . $produk->id_produk) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit </a>
 

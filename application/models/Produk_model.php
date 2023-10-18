@@ -14,16 +14,19 @@ class Produk_model extends CI_Model
     public function listing()
     {
         $this->db->select(
-            'produk.*,
+                            'produk.*,
                             users.nama,
                             kategori.nama_kategori,
-                            kategori.slug_kategori'
+                            kategori.slug_kategori,
+                            count(gambar.id_gambar) AS total_gambar'
         );
         $this->db->from('produk');
         //join
         $this->db->join('users', 'users.id_user = produk.id_user', 'left');
         $this->db->join('kategori', 'kategori.id_kategori = produk.id_kategori', 'left');
+        $this->db->join('gambar', 'gambar.id_produk = produk.id_produk', 'left');
         //end join
+        $this->db->group_by('produk.id_produk');
         $this->db->order_by('id_produk', 'desc');
         $query = $this->db->get();
         return $query->result();
@@ -39,6 +42,17 @@ class Produk_model extends CI_Model
         $query = $this->db->get();
         return $query->row();
     }
+
+     //edit
+     public function detail_gambar($id_gambar)
+     {
+         $this->db->select('*');
+         $this->db->from('gambar');
+         $this->db->where('id_gambar', $id_gambar);
+         $this->db->order_by('id_gambar', 'desc');
+         $query = $this->db->get();
+         return $query->row();
+     }
 
     //gambar
     public function gambar($id_produk)
@@ -75,4 +89,10 @@ class Produk_model extends CI_Model
         $this->db->where('id_produk', $data['id_produk']);
         $this->db->delete('produk', $data);
     }
+     //delete gambar
+     public function delete_gambar($data)
+     {
+         $this->db->where('id_gambar', $data['id_gambar']);
+         $this->db->delete('gambar', $data);
+     }
 }

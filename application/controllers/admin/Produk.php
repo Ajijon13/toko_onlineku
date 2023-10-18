@@ -348,4 +348,19 @@ class Produk extends CI_Controller
         $this->session->set_flashdata('sukses', 'Data telah dihapus');
         redirect(base_url('admin/produk'), 'refresh');
     }
+
+      //hapus gambar produk
+      public function delete_gambar($id_produk,$id_gambar)
+      {
+          //proses hapus gamabar
+          $gambar = $this->produk_model->detail_gambar($id_gambar);
+          unlink('assets/upload/image/' . $gambar->gambar);
+          unlink('assets/upload/image/thumbs/' . $gambar->gambar);
+          //end proses hapus gambar
+  
+          $data = array('id_gambar' => $id_gambar);
+          $this->produk_model->delete_gambar($data);
+          $this->session->set_flashdata('sukses', 'Data Gambar telah dihapus');
+          redirect(base_url('admin/produk/gambar/' .$id_produk), 'refresh');
+      }
 }
