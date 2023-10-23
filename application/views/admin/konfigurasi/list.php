@@ -65,6 +65,13 @@ echo form_open_multipart(base_url('admin/konfigurasi/'), 'class="form-horizontal
 </div>
 
 <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Alamat whatsapp</label>
+    <div class="col-sm-5">
+        <input type="text" name="wa" class="form-control" placeholder="Whatsapp" value="<?php echo $konfigurasi->wa ?>" required>
+    </div>
+</div>
+
+<div class="form-group row">
     <label class="col-sm-2 col-form-label">Telepon/HP</label>
     <div class="col-sm-5">
         <input type="text" name="telepon" class="form-control" placeholder="Nomor Telepon/HP" value="<?php echo $konfigurasi->telepon ?>" required>
