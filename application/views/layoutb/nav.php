@@ -1,11 +1,10 @@
 <?php
 //ambil data menu dari konfigurasi
 $nav_produk         = $this->konfigurasi_model->nav_produk();
-$nav_produk_mobile  = $this->konfigurasi_model->nav_produk();
-
 ?>
+
 <!-- Hero Section Begin -->
-<section class="hero">
+<section class="hero hero-normal">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -16,7 +15,7 @@ $nav_produk_mobile  = $this->konfigurasi_model->nav_produk();
                     </div>
                     <ul>
                         <?php foreach ($nav_produk as $nav_produk) { ?>
-                            <li><a href="" <?= base_url('produk/kategori/' . $nav_produk->slug_kategori) ?>>
+                            <li><a href=" <?= base_url('produk/kategori/' . $nav_produk->slug_kategori) ?>">
                                     <?= $nav_produk->nama_kategori ?>
                                 </a>
                             </li>
@@ -24,7 +23,7 @@ $nav_produk_mobile  = $this->konfigurasi_model->nav_produk();
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <dv class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
@@ -46,17 +45,8 @@ $nav_produk_mobile  = $this->konfigurasi_model->nav_produk();
                         </div>
                     </div>
                 </div>
-                
-                <div class="hero__item set-bg" data-setbg="<?=base_url('theme/frontend/img/hero/banner.jpg')?>">
-                    <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
-                        <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
     </div>
 </section>
 <!-- Hero Section End -->
@@ -65,11 +55,12 @@ $nav_produk_mobile  = $this->konfigurasi_model->nav_produk();
 <div class="humberger__menu__overlay"></div>
 <div class="humberger__menu__wrapper">
     <div class="humberger__menu__logo">
-        <a href="#"><img src="<?= base_url('assets/upload/image/' . $site->logo) ?>" alt="" width="50"></a>
+        <a href="#"><img src="<?= base_url('assets/upload/image/' . $site->logo) ?>" alt="" width="160"></a>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
             <li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
+            <li><a href="<?= base_url('produk') ?>">Produk</a></li>
             <li><a href="<?= base_url('kontak') ?>">Contact</a></li>
         </ul>
     </nav>

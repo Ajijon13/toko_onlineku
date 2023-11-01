@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="<?= base_url('assets/upload/image/' . $site->logo) ?>" alt="<?= $site->namaweb ?> | <?= $site->tagline ?>" width="60"></a>
+                    <a href="./index.html"><img src="<?= base_url('assets/upload/image/' . $site->logo) ?>" alt="<?= $site->namaweb ?> | <?= $site->tagline ?>" width="150"></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -38,20 +38,21 @@
                     <ul>
                         <!-- home -->
                         <li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
-                        <li><a href="<?= base_url('home/produk') ?>">Produk</a></li>
+                        <li><a href="<?= base_url('produk') ?>">Produk</a></li>
                         <li><a href="<?= base_url('kontak') ?>">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <!-- <div class="col-lg-3">
+            <div class="col-lg-3">
                 <div class="header__cart">
+                    <?php
+                    $keranjang      = $this->cart->contents();
+                    ?>
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="<?= base_url('theme/frontend/shoping-cart.html')?>"><i class="fa fa-shopping-bag"></i> <span><?php echo count($keranjang)?></span></a></li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="humberger__open">
             <i class="fa fa-bars"></i>

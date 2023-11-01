@@ -29,6 +29,6 @@ class Home extends CI_Controller
             'produk'     => $produk,
             'isi'        =>  'home/list'
         );
-        $this->load->view('layout/wrapper', $data, FALSE);
+        $this->load->view('layouta/wrapper', $data, FALSE);
     }
 }

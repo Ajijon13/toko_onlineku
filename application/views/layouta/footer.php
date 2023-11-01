@@ -8,7 +8,7 @@
               <div class="col-lg-3 col-md-6 col-sm-6">
                   <div class="footer__about">
                       <div class="footer__about__logo">
-                          <a href="#"><img src="<?php echo base_url('assets/upload/image/' . $site->logo) ?>" width="60" alt=""></a>
+                          <a href="#"><img src="<?php echo base_url('assets/upload/image/' . $site->logo) ?>" width="160" alt=""></a>
                       </div>
                       <ul>
                           <li><?= $site->alamat ?></li>

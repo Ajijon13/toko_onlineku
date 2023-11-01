@@ -62,19 +62,4 @@ class Konfigurasi_model extends CI_Model
         return $query->result();
     }
 
-
-    //gambar produk
-
-    // public function gambar_produk()
-    // {
-    //     $this->db->select(
-    //         'gambar.*,
-    //         kategori.id_gambar,
-    //         kategori.id_produk'
-    //     );
-    //     $this->db->from('produk');
-
-    // }
-
-    
 }

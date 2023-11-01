@@ -1,6 +1,4 @@
 <?php
-//load banner
-include('slider.php');
 //load kategori
 include('kategori.php');
 ?>
@@ -10,12 +8,12 @@ include('kategori.php');
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="banner__pic">
-                    <img src="img/banner/banner-1.jpg" alt="">
+                    <img src="<?= base_url('theme/frontend/img/banner/banner-1.jpg')?>" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="banner__pic">
-                    <img src="img/banner/banner-2.jpg" alt="">
+                    <img src="<?= base_url('theme/frontend/img/banner/banner-2.jpg')?>" alt="">
                 </div>
             </div>
         </div>
@@ -23,8 +21,13 @@ include('kategori.php');
 </div>
 <!-- Banner End -->
 
+<?php 
+//load slider
+include('slider.php');
+?>
+
 <!-- Latest Product Section Begin -->
-<section class="latest-product spad">
+<!-- <section class="latest-product spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
@@ -224,10 +227,10 @@ include('kategori.php');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Latest Product Section End -->
 
 <?php
-//load produk
-include('blog.php');
+//load berita
+include('berita.php');
 ?>
