@@ -11,12 +11,14 @@ class Home extends CI_Controller
         $this->load->model('produk_model');
         $this->load->model('kategori_model');
         $this->load->model('konfigurasi_model');
+        $this->load->model('berita_model');
     }
 
     //Halaman Utama website home
     public function index()
     {
         $site           = $this->konfigurasi_model->listing();
+        $berita          = $this->berita_model->listing();
         $kategori       = $this->konfigurasi_model->nav_produk();
         $produk         = $this->produk_model->home();
 
@@ -25,6 +27,7 @@ class Home extends CI_Controller
             'keywords'   => $site->keywords,
             'deskripsi'  => $site->deskripsi,
             'site'       => $site,
+            'berita'     => $berita,
             'kategori'   => $kategori,
             'produk'     => $produk,
             'isi'        =>  'home/list'

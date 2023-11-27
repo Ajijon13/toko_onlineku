@@ -20,6 +20,7 @@ if ($this->session->flashdata('sukses')) {
             <th>Nama</th>
             <th>Slug</th>
             <th>Urutan</th>
+            <th>Gambar</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -27,6 +28,7 @@ if ($this->session->flashdata('sukses')) {
         <?php $no=1; foreach($kategori as $kategori) { ?>
             <tr>
                 <td><?= $no++ ?></td>
+                <td><img src="<?php echo base_url('./assets/upload/kategori/image/thumbs/' . $kategori->gambar) ?>" class="img img-responsive img-thumbnail" width="60"></td>
                 <td><?= $kategori->nama_kategori ?></td>
                 <td><?= $kategori->slug_kategori ?></td>
                 <td><?= $kategori->urutan ?></td>
@@ -34,8 +36,7 @@ if ($this->session->flashdata('sukses')) {
                     <a href="<?= base_url('admin/kategori/edit/' . $kategori->id_kategori) ?>" 
                     class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit </a>
 
-                    <a href="<?= base_url('admin/kategori/delete/' . $kategori->id_kategori) ?>" 
-                    class="btn btn-danger btn-xs" onclick="return confirm('Yakin anda akan menghapus data ini?')"><i class="fa fa-trash-o"></i> Hapus </a>
+                    <?php include('delete.php') ?>
                 </td>
             </tr>
         <?php } ?>

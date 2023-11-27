@@ -15,7 +15,7 @@ class Dasbor extends CI_Controller
     public function index()
     {
         $data = array(
-            'title'      => 'Halaman Administator',
+            'title'      => 'Halaman Dashboard',
             'isi'        =>  'admin/dasbor/list'
         );
         $this->load->view('admin/layout/wrapper', $data, FALSE);

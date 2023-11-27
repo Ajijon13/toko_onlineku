@@ -1,8 +1,99 @@
 <?php
 //ambil data menu dari konfigurasi
 $nav_produk         = $this->konfigurasi_model->nav_produk();
+$banners             = $this->konfigurasi_model->banner();
 
 ?>
+<style>
+    .carousel-caption {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 60%;
+        bottom: 0;
+        transform: translateY(0%);
+        background-color: rgba(111, 103, 103, 0.4);
+        /* Warna hitam dengan tingkat keputihan 0.8 */
+
+      
+        text-orientation: upright;
+        /* Orientasi tulisan dan kotak tegak */
+        writing-mode: horizontal-tb;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-caption h2 {
+        color: white;
+        /* Warna tulisan diubah menjadi putih */
+        margin-top: 30%;
+        /* Menghilangkan margin pada tulisan */
+    }
+
+    .carousel-caption p {
+        color: white;
+        /* Warna tulisan diubah menjadi putih */
+
+    }
+    .buy-now-button {
+            margin-top: 0px;
+        }
+
+    @media (max-width: 411px) {
+
+        /* Ukuran layar kecil, seperti pada layar HP */
+        .carousel-caption {
+            writing-mode: horizontal-tb;
+            text-orientation: mixed;
+            top: 0;
+            right: 0;
+            left: 60%;
+            bottom: 0;
+            transform: translateY(0%);
+            border-radius: 0;
+        
+        }
+
+        .carousel-caption h2 {
+            font-size: 80%;
+        }
+
+        .carousel-caption p {
+            font-size: 50%;
+        }
+    }
+
+    @media (min-width: 412px) and (max-width: 576px) {
+
+        /* Ukuran layar medium, seperti pada layar Android dengan lebar 412px atau lebih */
+        .carousel-caption h2 {
+            font-size: 80%;
+        }
+
+        .carousel-caption p {
+            font-size: 50%;
+        }
+
+    }
+
+    @media (min-width: 577px) and (max-width: 768px) {
+
+        /* Ukuran layar tablet */
+        .carousel-caption h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+        /* Ukuran layar laptop */
+        .carousel-caption h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
 <!-- Hero Section Begin -->
 <section class="hero">
     <div class="container">
@@ -28,7 +119,7 @@ $nav_produk         = $this->konfigurasi_model->nav_produk();
                     <div class="hero__search__form">
                         <form action="#">
                             <div class="hero__search__categories">
-                                All Categories
+                                Semua Kategori
                                 <span class="arrow_carrot-down"></span>
                             </div>
                             <input type="text" placeholder="What do yo u need?">
@@ -46,18 +137,27 @@ $nav_produk         = $this->konfigurasi_model->nav_produk();
                     </div>
                 </div>
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <?php $no = 0; ?>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?= base_url('theme/frontend/img/hero/banner.jpg') ?>" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                    <h2>Vegetable 100% Organic</h2>
-                                    <p>Free Pickup and Delivery Available</p>
-                                    <a href="<?php echo base_url('produk')?>" class="primary-btn">SHOP NOW</a>
+                        <?php foreach ($banners as $banner) : ?>
+
+                            <?php $no++;  ?>
+                            <div class="carousel-item <?php if ($no <= 1) {
+                                                            echo "active";
+                                                        } ?>">
+                                <img src="<?php echo base_url('assets/upload/banner/image/thumbs/' . $banner->gambar) ?>" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-block">
+                                    <h2 class="font-weight-bold"><?php echo $banner->judul ?></h2>
+                                    <p><?php echo $banner->keterangan ?>
+                                    </p>
+                                    <a href="<?php echo base_url('produk') ?>" class="primary-btn buy-now-button">SHOP NOW</a>
+                                    </div>
                             </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
-                <!-- <div class="hero__item owl-carousel set-bg " data-setbg="<?= base_url('theme/frontend/img/hero/banner.jpg') ?>">
+            </div>
+            <!-- <div class="hero__item owl-carousel set-bg " data-setbg="<?= base_url('theme/frontend/img/hero/banner.jpg') ?>">
                     <div class="hero__text">
                         <span>FRUIT FRESH</span>
                         <h2>Vegetable <br />100% Organic</h2>
@@ -65,8 +165,8 @@ $nav_produk         = $this->konfigurasi_model->nav_produk();
                         <a href="#" class="primary-btn">SHOP NOW</a>
                     </div>
                 </div> -->
-            </div>
         </div>
+    </div>
     </div>
 </section>
 <!-- Hero Section End -->
@@ -81,7 +181,7 @@ $nav_produk         = $this->konfigurasi_model->nav_produk();
         <ul>
             <li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
             <li><a href="<?= base_url('produk') ?>">Produk</a></li>
-            <li><a href="<?= base_url('kontak') ?>">Contact</a></li>
+            <li><a href="<?= base_url('kontak') ?>">Kontak</a></li>
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>

@@ -1,9 +1,16 @@
 <?php
+//error upload
+if(isset($error)) {
+    echo '<p class="alert alert-warning">';
+    echo $error;
+    echo '</p>';
+}
+
 //notifikasi eror
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
 //form open
-echo form_open(base_url('admin/kategori/edit/' .$kategori->id_kategori), ' class="form-horizontal"');
+echo form_open_multipart(base_url('admin/kategori/edit/' .$kategori->id_kategori), 'class="form-horizontal"');
 ?>
 
 <div class="form-group row">
@@ -17,8 +24,14 @@ echo form_open(base_url('admin/kategori/edit/' .$kategori->id_kategori), ' class
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">Urutan</label>
     <div class="col-sm-5">
-        <input type="number" name="urutan" class="form-control" placeholder="Urutan" value="
-        <?php echo $kategori->urutan ?>" required>
+        <input type="number" name="urutan" class="form-control" placeholder="Urutan" value="<?php echo $kategori->urutan ?>" required>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Upload Gambar Kategori</label>
+    <div class="col-sm-5">
+        <input type="file" name="gambar" class="form-control">
     </div>
 </div>
 

@@ -39,7 +39,7 @@
                         <!-- home -->
                         <li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
                         <li><a href="<?= base_url('produk') ?>">Produk</a></li>
-                        <li><a href="<?= base_url('kontak') ?>">Contact</a></li>
+                        <li><a href="<?= base_url('kontak') ?>">Kontak</a></li>
                     </ul>
                 </nav>
             </div>

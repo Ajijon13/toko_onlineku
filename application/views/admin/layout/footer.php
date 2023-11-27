@@ -79,6 +79,10 @@
     // Summernote
     $('#summernote').summernote()
   })
+  $(function() {
+    // Summernote
+    $('#summernote1').summernote()
+  })
 </script>
 <script>
   $(function() {

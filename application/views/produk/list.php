@@ -1,3 +1,6 @@
+<?php 
+$total = $this->produk_model->total_produk();
+?>
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-section set-bg" data-setbg="<?= base_url('theme/frontend/img/breadcrumb.jpg') ?>">
     <div class="container">
@@ -41,16 +44,11 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-5">
                             <div class="filter__sort">
-                                <span>Sort By</span>
-                                <select>
-                                    <option value="0">Default</option>
-                                    <option value="0">Default</option>
-                                </select>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter__found">
-                                <h6><span>16</span> Products found</h6>
+                                <h6><span><?= $total->total?> </span> Produk</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-3">

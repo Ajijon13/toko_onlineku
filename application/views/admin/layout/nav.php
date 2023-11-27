@@ -88,8 +88,52 @@
           </ul>
         </li>
 
-         <!-- Menu Konfigurasi -->
-         <li class="nav-item">
+        <!-- Menu Banner -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-image"></i>
+            <p>
+              Banner
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('admin/banner') ?>" class="nav-link">
+                <i class="fas fa-table nav-icon"></i>
+                <p>Data Banner</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('admin/banner/tambah') ?>" class="nav-link">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Tambah Banner</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Menu berita -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Berita
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('admin/berita') ?>" class="nav-link">
+                <i class="fas fa-table nav-icon"></i>
+                <p>Data Berita</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Menu Konfigurasi -->
+        <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-wrench"></i>
             <p>
@@ -145,7 +189,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">Home</a></li>
-            <li class="breadcrumb-item active"><a href="<?php echo base_url('admin/produk')?>"><?= $title; ?></a></li>
+            <li class="breadcrumb-item active"><a href="<?php echo base_url('admin/produk') ?>"><?= $title; ?></a></li>
           </ol>
         </div>
       </div>

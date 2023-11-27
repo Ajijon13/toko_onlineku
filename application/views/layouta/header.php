@@ -39,11 +39,11 @@
                         <!-- home -->
                         <li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
                         <li><a href="<?= base_url('produk') ?>">Produk</a></li>
-                        <li><a href="<?= base_url('kontak') ?>">Contact</a></li>
+                        <li><a href="<?= base_url('kontak') ?>">Kontak</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-3">
+            <!-- <div class="col-lg-3">
                 <div class="header__cart">
                     <?php
                     $keranjang      = $this->cart->contents();
@@ -52,7 +52,7 @@
                         <li><a href="<?= base_url('theme/frontend/shoping-cart.html')?>"><i class="fa fa-shopping-bag"></i> <span><?php echo count($keranjang)?></span></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="humberger__open">
             <i class="fa fa-bars"></i>

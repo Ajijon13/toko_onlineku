@@ -46,7 +46,7 @@ class Konfigurasi_model extends CI_Model
     public function kategori_produk()
     {
         $this->db->select(
-            'produk.*,
+        'produk.*,
         kategori.nama_kategori,
         kategori.slug_kategori,
         count(gambar.id_gambar) AS total_gambar'
@@ -61,5 +61,14 @@ class Konfigurasi_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+
+     //banner
+     public function banner()
+     {
+        $this->db->select('*');
+        $this->db->from('banner');
+        $query = $this->db->get();
+        return $query->result();
+     }
 
 }

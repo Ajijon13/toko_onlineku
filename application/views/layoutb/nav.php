@@ -28,7 +28,7 @@ $nav_produk         = $this->konfigurasi_model->nav_produk();
                     <div class="hero__search__form">
                         <form action="#">
                             <div class="hero__search__categories">
-                                All Categories
+                                Semua Kategori
                                 <span class="arrow_carrot-down"></span>
                             </div>
                             <input type="text" placeholder="What do yo u need?">
@@ -61,7 +61,7 @@ $nav_produk         = $this->konfigurasi_model->nav_produk();
         <ul>
             <li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
             <li><a href="<?= base_url('produk') ?>">Produk</a></li>
-            <li><a href="<?= base_url('kontak') ?>">Contact</a></li>
+            <li><a href="<?= base_url('kontak') ?>">Kontak</a></li>
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>

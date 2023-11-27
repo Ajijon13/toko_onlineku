@@ -1,9 +1,14 @@
+<?php 
+//load slider
+include('slider.php');
+?>
+
 <?php
 //load kategori
 include('kategori.php');
 ?>
 <!-- Banner Begin -->
-<div class="banner">
+<!-- <div class="banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -18,13 +23,10 @@ include('kategori.php');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Banner End -->
 
-<?php 
-//load slider
-include('slider.php');
-?>
+
 
 <!-- Latest Product Section Begin -->
 <!-- <section class="latest-product spad">

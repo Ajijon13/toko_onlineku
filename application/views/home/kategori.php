@@ -2,7 +2,7 @@
 //ambil data menu dari konfigurasi
 $kategori_produks           = $this->konfigurasi_model->kategori_produk();
 $nav_produks                = $this->konfigurasi_model->nav_produk();
-$produk                     = $this->produk_model->listing();
+
 
 ?>
 <section class="featured spad">

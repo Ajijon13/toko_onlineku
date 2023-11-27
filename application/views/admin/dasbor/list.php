@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">
@@ -5,7 +6,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3><?php echo $this->dasbor_model->total_produk()->total; ?></h3>
 
                     <p>Data Produk</p>
                 </div>
@@ -20,7 +21,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <h3><?php echo $this->dasbor_model->total_kategori()->total; ?></h3>
 
                     <p>Kategori Produk</p>
                 </div>
@@ -35,7 +36,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3><?php echo $this->dasbor_model->total_gambar()->total; ?></h3>
 
                     <p>Gambar Produk</p>
                 </div>
@@ -50,7 +51,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>65</h3>
+                    <h3><?php echo $this->dasbor_model->total_user()->total; ?></h3>
 
                     <p>User</p>
                 </div>
